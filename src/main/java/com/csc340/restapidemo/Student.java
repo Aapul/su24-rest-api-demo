@@ -1,13 +1,29 @@
 package com.csc340.restapidemo;
 
+
+import jakarta.annotation.Nonnull;
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "students")
 public class Student {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
+    @Nonnull
     private  String name;
 
+    @Nonnull
     private String major;
 
+    @Nonnull
     private double gpa;
+
+    public Student(){
+
+    }
 
     public Student(int id, String name, String major, double gpa) {
         this.id = id;
